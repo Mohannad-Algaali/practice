@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(224, 244, 237);
+    text-align: center;
+    padding:15px;
+    font-size:1.5em;
+    font-weight: bold;
+}
+
+#add-task-textbox{
+    padding: 5px;
+    border-radius: 8px;
+    border-style:solid;
+    border-color: cadetblue;
+    
+   
+    font-size: 1.01em;
+    
+}
+
+#add-task-button{
+    width: 10em;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 20px;
+}
+.done{
+    text-decoration: line-through;
+    position:relative;
+}
+.done::before{
+    content: '';
+    background-color: black;
+    width: 80%;
+    height: 2px;
+    z-index: 100;
+    position: absolute;
+    top: 32%;
+
+}
+#tasks-list{
+    list-style: none;
+    display: flexbox;
+    text-align: start;
+    height: fit-content;
+    
+}
+#task-item{
+    background-color: aliceblue;
+    margin: 5px;
+    
+    
+    display: grid;
+    place-items: center;
+    grid-template-columns: 90% 8% ;
+    gap :2%;
+    border-radius: 30px;
+    
+}
+#task-item span{
+    justify-content: center;
+}
+
+
+

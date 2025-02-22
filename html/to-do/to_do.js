@@ -1,21 +1,31 @@
-let listOfTasks = [];
-class Task {
-    constructor(taskText) {
-        this.taskText = taskText;
-        this.isChecked = false;
+
+
+
+
+
+function addTask(){
+    let tasksList = document.getElementById("tasks-list");
+    let addTaskTextbox =  document.getElementById('add-task-textbox');
+    
+    let taskText = addTaskTextbox.value;
+    if (taskText === ''){
+        alert('The text box is empty!');
+        return;
     }
+    let task = document.createElement("li");
+    task.setAttribute('id','task-item');
+    task.innerHTML = `<span id="task-text">`+taskText +`</span><button id="delete-button" onclick="deleteTask(this)">X</button><br>`
+    
+    task.addEventListener('click', function(){
+        task.classList.toggle('done');
+    });
+
+    tasksList.appendChild(task);
+    addTaskTextbox.value = '';
 }
 
-let tasksList = document.getElementById("tasks-list");
-let taskElement = document.getElementById("task");
-let addTaskTextbox =  document.getElementById('add-task-textbox');
-let addTaskButton = document.getElementById('add-task-button');
-
-addTaskButton.onclick = function(){
-    let text =String(addTaskTextbox.value);
-    if (text.length >0){
-        let task =  new Task(text);
-        // continue here to create a new task element each time the button is pressed
-    }
+function deleteTask(element){
+    element.parentElement.remove();
 }
+
 

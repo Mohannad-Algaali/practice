@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
     <Title>To Do App</Title>
+    <script src="to_do.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -8,17 +10,11 @@
     </header>
     <br>
     <article>
-        <h2>Today's List</h2>
-        <ol id="tasks-list">
-            <li hidden id="task">
-                <input type="checkbox" name="checkbox" id="task=checkbox">
-                <span id="task-text">Description</span>
-                <br>
-            </li>
-        </ol>
+        <h2>Tasks List</h2>
+        <ol id="tasks-list"></ol>
         <div>
-            <input id="add-task-textbox" type="text">
-            <button id="add-task-button">Add</button>
+            <input id="add-task-textbox" placeholder="Enter Task... " type="text"><br>
+            <button id="add-task-button" onclick="addTask()">Add</button>
         </div>
     </article>
 </body>
