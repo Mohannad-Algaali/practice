@@ -1,7 +1,11 @@
 
 
 
-
+document.addEventListener("keydown", (e)=> {
+    if(e.key === "Enter"){
+        addTask();
+    }
+});
 
 function addTask(){
     let tasksList = document.getElementById("tasks-list");

@@ -1,65 +1,113 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(224, 244, 237);
-    text-align: center;
-    padding:15px;
-    font-size:1.5em;
-    font-weight: bold;
+
+:root{
+    /*initialize variables*/
+    font-family:sans-serif;
+    --primary-color:rgb(230,240,230);
+    --secondary-color:rgb(40,30,60)
+    --accent : rgb(200,190,190)
+}
+body{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    min-height: 50vh;
+    place-items: center;
 }
 
-#add-task-textbox{
-    padding: 5px;
-    border-radius: 8px;
-    border-style:solid;
-    border-color: cadetblue;
+#tasks-list{
+ width: 80vw;
+ gap: 10px;
+ display: grid;
+ grid-template-columns: 1fr;
+ 
+ list-style: none;
+ padding: 5px;
+}
+
+
+
+#task-item{
+    display: grid;
+    grid-template-columns:10% 80% 8%;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    background-color: var(--primary-color);
+    box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.2)  ;
     
-   
-    font-size: 1.01em;
+    align-items: center;
+    gap: 5px;
+    height:7vh;
+    
+}
+#task-item:hover{
+    transform: scale(1.1) ;
+    background-color: var(--accent);
     
 }
 
-#add-task-button{
-    width: 10em;
-    background-color: darkcyan;
-    border: none;
-    border-radius: 20px;
-}
-.done{
-    text-decoration: line-through;
-    position:relative;
+
+#task-item::before{
+    content:'';
+    width :20px;
+    height:20px;
+    border: 2px solid black;
+    margin: 15px ;   
+    cursor: pointer;
+    
 }
 .done::before{
-    content: '';
     background-color: black;
-    width: 80%;
-    height: 2px;
-    z-index: 100;
+}
+#task-item.done{
+    position:relative;
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* I dont know why this doesn't work, it should make a line through*/
+.done::after{
+    content:'';
+    top: 0;
+    left: 0;
     position: absolute;
-    top: 32%;
+    background-color: var(--secondary-color);
+    width: 120%;
+    height: 5px;
+}
 
-}
-#tasks-list{
-    list-style: none;
-    display: flexbox;
-    text-align: start;
-    height: fit-content;
-    
-}
-#task-item{
-    background-color: aliceblue;
-    margin: 5px;
-    
-    
-    display: grid;
+#task-item #delete-button{
+    border: none;
+    font: 2em;
     place-items: center;
-    grid-template-columns: 90% 8% ;
-    gap :2%;
-    border-radius: 30px;
+    font-weight: 900;
+    color: var(--secondary-color);
+    border-radius: 100px;
+    transform: scale(0.8);
+    text-decoration: none;
+    transition:all 0.2s ease-in-out;
+}
+#delete-button:hover{
+    background-color:red;
+    
     
 }
-#task-item span{
-    justify-content: center;
+
+article div{
+   
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
 }
-
-
-
+#add-task-textbox{
+    font-size: 1.5em;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+#add-task-button{
+    
+    font-size: 1.5em;
+    border-radius: 5px;
+    
+    padding: 5px;
+    width:20%
+}
