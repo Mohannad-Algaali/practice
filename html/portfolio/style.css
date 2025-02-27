@@ -1,7 +1,8 @@
 :root{
-    --accent: rgb(0, 0, 140);
+    --accent: rgb(0, 0, 180);
     --primary: rgb(220, 220, 220);
     --secondary: rgb(40, 40, 40);
+    --background2:rgb(168, 190, 255);
     background-color: var(--primary);
     color:var(--secondary);
     font-size: 16px;
@@ -13,12 +14,29 @@
     padding:0;
 }
 
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale:0.5;
+       
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+        
+    }
+
+}
+
 .page-header{
     width: 100%;
 }
 nav{
     width: 100%;
     
+}
+h3{
+    font-size: 2em;
 }
 .page-header nav ul{
     width: 100%;
@@ -43,7 +61,7 @@ nav{
     
 }
 .page-header nav ul li:hover{
-    background-color:rgba(0, 0, 255, 0.375);
+    background-color:rgba(29, 29, 255, 0.375);
     transform: scale(1.2)  translateX(-10px) translateY(5px);
 
 }
@@ -88,21 +106,85 @@ section{
     height:50vh;
     border-radius: 50px;
     box-shadow: 20px 40px 0 blue;
+    
 }
 
 .education-list li{
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 20px;
+    margin-top: 60px;
+    font-size: 1.5em;
+    height: 100vh;
+   /*  animation is not working, fix later
+   animation-name: appear;
+    animation-timing-function: linear;
+    animation-timeline: view();
+    animation-range: entry 0; */
+    
 }
 
-
-
-
-
 .education-list li img{
-   border-radius: 20px;
+   
+   width: 200px;
+   height: 200px;
+   object-fit: cover;
+   margin-left: 20px;
+   border: 3px solid black;
+    border-radius: 20px;
+   
+
   
 }
 
+.exp-section{
+    background-color: var(--background2);
+}
+
+
+.exp-section ol li{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    justify-content: space-between;
+    align-content: center;
+    place-items: center;
+    position: relative;
+    font-size: 1.5em;
+    height: 80vh;
+    
+}
+.exp-section ol li img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+.exp-section ol li::after{
+    content: '';
+    background-color: var(--accent);
+    height: 0.5px;
+    width: 80vw;
+    position: absolute;
+    bottom : -40px;
+}
+
+.projects-section{
+    font-size: 1.5em;
+
+}
+.projects-section ol li{
+    height: 100vh;
+    place-content: center;
+}
+
+footer{
+    display: flex;
+    background-color: var(--secondary);
+    color: var(--primary);
+    height: 5vh;
+    align-items: center;
+}
