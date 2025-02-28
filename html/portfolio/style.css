@@ -1,8 +1,8 @@
 :root{
-    --accent: rgb(0, 0, 180);
-    --primary: rgb(220, 220, 220);
-    --secondary: rgb(40, 40, 40);
-    --background2:rgb(168, 190, 255);
+    --accent: #03346E;
+    --primary: #021526;
+    --secondary: #E2E2B6;
+    --background2:#3b5970;
     background-color: var(--primary);
     color:var(--secondary);
     font-size: 16px;
@@ -18,11 +18,13 @@
     from{
         opacity: 0;
         scale:0.5;
+        transform: translateX(-1000px);
        
     }
     to{
         opacity: 1;
         scale: 1;
+        transform: translateX(0);
         
     }
 
@@ -57,7 +59,7 @@ h3{
 .page-header nav ul li{
     height: 50px;
     align-content: center;
-    transition:all 0.2s ease-in-out;
+    transition:background-color,transfrom 0.2s ease-in-out;
     
 }
 .page-header nav ul li:hover{
@@ -75,7 +77,7 @@ h3{
 }
 .page-header nav ul li a{
     text-decoration: none;
-    color: var(--primary);
+    color: var(--secondary);
     font-weight: 600;
     height: 50px;
     text-align: center;
@@ -93,7 +95,7 @@ section{
 
 .welcome-section{
     background-color: var(--accent);
-    color:var(--primary);
+    color:var(--secondary);
     font-size: 1.5em;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -102,36 +104,51 @@ section{
     
 }
 .img-pfp{
+    background-image: url('images/mohannad_pic.jpg');
+    background-position: center;
+    background-size: cover;
     width:fit-content;
     height:50vh;
+    width:50vh;
     border-radius: 50px;
-    box-shadow: 20px 40px 0 blue;
+    border: var(--primary) 4px solid;
+    box-shadow: 20px 40px 0 var(--primary);
+    transition: background-image 0.2s ease-out;
     
 }
+.img-pfp:hover{
+    background-image: url('images/mohannad_pic2.jpg');
+}
 
+.education-list{
+    overflow: clip; 
+}
 .education-list li{
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 60px;
     font-size: 1.5em;
-    height: 100vh;
-   /*  animation is not working, fix later
-   animation-name: appear;
-    animation-timing-function: linear;
-    animation-timeline: view();
-    animation-range: entry 0; */
+    height: 120vh;
+    place-items: center;
     
+   
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0;
 }
 
 .education-list li img{
    
-   width: 200px;
-   height: 200px;
+   width: 300px;
+   height: 300px;
    object-fit: cover;
    margin-left: 20px;
-   border: 3px solid black;
+   border: 4px solid var(--secondary);
     border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 40px var(--secondary);
    
 
   
@@ -140,7 +157,6 @@ section{
 .exp-section{
     background-color: var(--background2);
 }
-
 
 .exp-section ol li{
     display: flex;
@@ -151,16 +167,25 @@ section{
     place-items: center;
     position: relative;
     font-size: 1.5em;
-    height: 80vh;
+    height: 100vh;
     
 }
+h3{
+    font-size: 3em;
+    margin-bottom:1em;
+}
+h4{
+    font-size: 2em;
+    margin-bottom: 1em;
+}
 .exp-section ol li img{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     margin-right: 20px;
     margin-left: 20px;
-    border: 3px solid black;
+    border: 4px solid var(--primary);
+    box-shadow: 0px 0px 40px var(--secondary);
     border-radius: 20px;
 }
 .exp-section ol li::after{
@@ -176,15 +201,41 @@ section{
     font-size: 1.5em;
 
 }
+.projects-section ol{
+    list-style: none;
+}
 .projects-section ol li{
     height: 100vh;
     place-content: center;
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    place-items: center;
+    justify-content: space-around;
+    gap: 1rem;
 }
 
 footer{
     display: flex;
     background-color: var(--secondary);
     color: var(--primary);
-    height: 5vh;
+    height: 10vh;
     align-items: center;
+    font-size: 1.2em;
+    padding-left: 1em;
 }
+
+.hidden{
+    opacity: 0;
+    transform: translateX(-100%) ;
+    transition:all 0.5s ease;
+}
+
+.hidden:nth-child(2){
+    transition-delay: 0.5s;
+}
+
+.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
