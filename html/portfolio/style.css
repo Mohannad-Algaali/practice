@@ -2,7 +2,7 @@
     --accent: #03346E;
     --primary: #021526;
     --secondary: #E2E2B6;
-    --background2:#3b5970;
+    --background2:#0068b8;
     background-color: var(--primary);
     color:var(--secondary);
     font-size: 16px;
@@ -14,21 +14,7 @@
     padding:0;
 }
 
-@keyframes appear{
-    from{
-        opacity: 0;
-        scale:0.5;
-        transform: translateX(-1000px);
-       
-    }
-    to{
-        opacity: 1;
-        scale: 1;
-        transform: translateX(0);
-        
-    }
 
-}
 
 .page-header{
     width: 100%;
@@ -53,18 +39,18 @@ h3{
     overflow: wrap;
     position: absolute;
     top: 0;
-    background-color: var(--accent);
+    
 
 }
 .page-header nav ul li{
     height: 50px;
     align-content: center;
-    transition:background-color,transfrom 0.2s ease-in-out;
+    transition:all 0.3s ease;
     
 }
 .page-header nav ul li:hover{
     background-color:rgba(29, 29, 255, 0.375);
-    transform: scale(1.2)  translateX(-10px) translateY(5px);
+    transform: scale(1.2) translateX(-10px) translateY(5px);
 
 }
 .page-header nav ul li:first-child{
@@ -94,7 +80,7 @@ section{
 }
 
 .welcome-section{
-    background-color: var(--accent);
+    background: linear-gradient(to right bottom,var(--accent) 50%,#07cdff);
     color:var(--secondary);
     font-size: 1.5em;
     display: grid;
@@ -109,28 +95,29 @@ section{
 
 @keyframes wiggle{
     0%{
-        transform: translateX(5px);
-        transform: translateY(10px);
+        transform: rotate(2deg) translateX(5px) translateY(10px);
+        
+        
 
     }
     25%{
-        transform: translateX(10px);
-        transform: translateY(-5px);
+        transform: translateX(10px) translateY(-5px);
+      
 
     }
     50%{
-        transform: translateX(-5px);
-        transform: translateY(10px);
+        transform: rotate(-1deg) translateY(10px) translateX(-5px);
+    
 
     }
     75%{
-        transform: translateX(-10px);
-        transform: translateY(-5px);
+        transform: translateX(-10px)  translateY(-5px);
+        
     }
     
     100%{
-        transform: translateX(5px);
-        transform: translateY(10px);
+        transform: rotate(2deg) translateX(5px)  translateY(10px);;
+        
     }
 
 }
@@ -150,9 +137,26 @@ section{
     animation-duration: 5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-direction: forward;
+    animation-direction: forwards;
+    position: relative;
     
 }
+
+.img-pfp::before{
+    content: '';
+    width: 200px;
+    height: 200px;
+    background-image:url('images/planet.svg');
+    position: absolute;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: -100px;
+    animation:wiggle 10s infinite ease-in forwards;
+    top: -100px;
+   
+}
+
 .img-pfp:hover{
     background-image: url('images/mohannad_pic2.jpg');
 }
