@@ -1,10 +1,11 @@
 let menuBtn = document.querySelector(".menu-btn");
-const CHECKED = 'checked';
+let menu = document.querySelector(".top-nav-bar ul"); 
 
+const SHOWN = 'shown';
 menuBtn.addEventListener('click', (e)=>{
-    if(menuBtn.classList.contains(CHECKED)){
-        menuBtn.classList.add(CHECKED);
+    if(manu.classList.contains(SHOWN)){
+        menu.classList.remove(SHOWN);
     }else{
-        menuBtn.classList.remove(CHECKED);
+        menu.classList.add(SHOWN);
     }
 });

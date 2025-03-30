@@ -4,6 +4,9 @@
     <title>Plants Store</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Rakkas&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
 </head>
 <body>
    <!--
@@ -32,22 +35,58 @@
             4.product
             footer
             -->
-
-    <header>
-        <nav class="top-nav-bar">
-            <label class="website-name"><a href="#">Leaf</a></label>
-            <ul>
+    <div class="sticky">
+        <header class="nav-header">
+            <main class="main-logo">
+                <a class="website-name-container">
+                    <div class="header-bg"></div>
+                    <img class="logo" src="images/single_leaf.png" alt="leaf img">
+                    <h1>LEAF</h1>
+                </a>
+            </main>
+            <nav class="top-nav-bar">
+                <div class="header-bg"></div>
+                <ul class="top-nav-container">
+                    <li class="nav-item active"><a href="#">Home</a></li>
+                    <li class="nav-item "><a href="#">Products</a></li>
+                    <li class="nav-item "><a href="#">Contact</a></li>
+                    <li class="nav-item "><a href="#">About</a></li>
+                </ul>
                 
-                    <li class="active big-screen"><a  href="#">Plants</a></li>
-                    <li class="big-screen"><a href="#">Seeds</a></li>
-                    <li class="big-screen"><a href="#">About</a></li>
-                
-                
-                <li class="menu-btn small-screen"><div ><svg width="40px" height="40px" class="icon" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#fcfcfcff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>hamburger</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-212.000000, -888.000000)" fill="#fcfcfcff"> <path d="M230,904 L214,904 C212.896,904 212,904.896 212,906 C212,907.104 212.896,908 214,908 L230,908 C231.104,908 232,907.104 232,906 C232,904.896 231.104,904 230,904 L230,904 Z M230,896 L214,896 C212.896,896 212,896.896 212,898 C212,899.104 212.896,900 214,900 L230,900 C231.104,900 232,899.104 232,898 C232,896.896 231.104,896 230,896 L230,896 Z M214,892 L230,892 C231.104,892 232,891.104 232,890 C232,888.896 231.104,888 230,888 L214,888 C212.896,888 212,888.896 212,890 C212,891.104 212.896,892 214,892 L214,892 Z" id="hamburger" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg></div></li>
-
-            </ul>
-        </nav>
-    </header>
+            </nav>
+        </header>
+    </div>
+   
+    <article>
+        <section class="image-slider">
+            <div class="slider-wrapper">
+              <div class="slider">
+                <div class="slide" id="slide-1">
+                    <h2 class="slide-title">slide 1</h2>
+                    <img src="images/slider1_img1.jpg" alt="">
+                </div>
+                <div class="slide" id="slide-2">
+                    <h2 class="slide-title">slide 2</h2>
+                    <img src="images/slider1_img2.jpg" alt="">
+                </div>
+                <div class="slide" id="slide-3">
+                    <h2 class="slide-title">slide 3</h2>
+                    <img src="images/slider1_img3.jpg" alt="">
+                </div>
+                <div class="slide" id="slide-4">
+                    <h2 class="slide-title">slide 4</h2>
+                    <img src="images/slider1_img4.jpg" alt="">
+                </div>
+              </div>
+                <div class="slider-nav">
+                    <a href="#slide-1"></a>
+                    <a href="#slide-2"></a>
+                    <a href="#slide-3"></a>
+                    <a href="#slide-4"></a>
+                </div>
+            </div>
+        </section>
+    </article>
 
 </body>
 </html>
